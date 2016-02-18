@@ -22,6 +22,8 @@ The [R script] that performs data transformation by:
 + Changing activity names to more descriptive.
 + Changing labels of the data set with descriptive variable names.
 + Creating  tidy data set with the average of each variable for each activity and each subject.
+
+
 __IMPORTANT: All measurements in tidy set are averages of each variable for each activity and each participant__ 
 ---
 ### Description of each variable
