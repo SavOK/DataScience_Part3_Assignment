@@ -3,10 +3,14 @@
 library("dplyr")
 library("data.table")
 
+args = commandArgs(trailingOnly=TRUE)
+
 CWD <- "~/Coursera/DataScience/Part3/DataScience_Part3_Assignment/"  # working directory
 URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" # url to data
-PATH <- "./UCI_HAR_Datase" # relative path to the data
+#PATH <- "./UCI_HAR_Datase" # relative path to the data
 setwd(CWD)
+
+PATH <- args[1]
 
 # function to get zip archive from web and save it in working directory 
 # should be run only once return date and time data was downloaded 

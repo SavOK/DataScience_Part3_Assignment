@@ -3,13 +3,16 @@
 Original dataset "Human Activity Recognition Using Smartphones Dataset" [[1]](#ref1) was downloaded from [Assignment Page] on Febrary 17 2016
 
 ---
+
 ##Description of original data and experiment
 ---
+
 Experiment was done on a group of 30 volunteers. Participants performed different tasks while wearing a smartphone _Samsung Galaxy S II_ on their waist. Using its embedded accelerometer and gyroscope. Authors measured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using embedded accelerometer and gyroscope.
 The sensor signals were  pre-processed by applying noise filters and the sampled in fixed width window of 2.56 sec and 50 overlap (128 readings/window). The signal from accelerometer was divided in two components (gravitational and body motion) by Butterworts low-path filter. 
 From each each window, a vector of features was calculated from the time and frequency domain. For more details please read [dataset page]
 
 ---
+
 ## Description of tidy set
 ---
 
@@ -24,7 +27,15 @@ The [R script] that performs data transformation by:
 + Creating  tidy data set with the average of each variable for each activity and each subject.
 
 
-__IMPORTANT: All measurements in tidy set are averages of each variable for each activity and each participant__ 
+####Script usage:
+	Rscript run_analysis.R PATH_TO_DATA_FOLDER
+#####Example:
+	Rscript run_analysis.R ./UCI_HAR_Datase
+#####Output: Space delimitated file with 75 columns and 181 rows (first row is the header line)
+	./clean_average_dataset.txt 
+  
+__IMPORTANT: All measurements in tidy set are averages of each variable for each activity and each participant__
+
 ---
 ### Description of each variable
 + subject (integer).  Identifies the participant number. Its range is from  1 to 30
