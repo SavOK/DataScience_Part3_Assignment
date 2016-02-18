@@ -29,7 +29,8 @@ get_features_names <- function(Path = character() ) {
         return()
     }
     DT <- fread(File.features)
-    DT$V2 <- gsub("-|,", "_", DT$V2)
+    DT$V2 <- gsub("-", "_", DT$V2)
+    DT$V2 <- gsub(",", "_", DT$V2)
     DT$V2 <- gsub("meanF", "MEAN_F", DT$V2)
     DT$V2 <- gsub("angle[(]", "angle_", DT$V2)
     DT$V2 <- gsub("[(]", "", DT$V2)
