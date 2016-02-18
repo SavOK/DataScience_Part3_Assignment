@@ -117,21 +117,32 @@ round_mean <- function (X) {
   return ( round(mean(X), 8) )
 }
 
-#dataDate <- get_data_from_web(URL)
+# ALL IN ONE FUNCTION
+# Copy file from assignment web page in Path
+# input:    relative path to derectory with data directory
+#           DownloadFlag = T will fetch data from the web and unzip it
+# output:   Tidy data set in data.table 
+make_tidy_set <- function( Path = character(), DownloadFlag = FALSE) {
+    if (DownloadFlag) {
+        dataDate <- get_data_from_web(URL)
+    }
+    #creates combine data 
+    # IMPORTANT all factoring and renaming happend at this stage
+    DT <- get_combined_data(Path)
 
-#creates combine data 
-# IMPORTANT all factoring and renaming happend at this stage
-DT <- get_combined_data(PATH)
+    #creates data table of means and std measurements
+    DT.mean <- get_means_and_std(DT)
 
-#creates data table of means and std measurements
-DT.mean <- get_means_and_std(DT)
+    Features <- colnames(DT.mean)
+    #aggregates mean values for subject and activity
+    DT.final <-aggregate(DT.mean[,3:ncol(DT.mean), with=F], 
+                         by=list(DT.mean$subject, DT.mean$activity), FUN = round_mean,  simplify = TRUE)
+    colnames(DT.final) <- Features
+    return(DT.final)
+} 
 
-Features <- colnames(DT.mean)
-#aggregates mean values for subject and activity
-DT.final <-aggregate(DT.mean[,3:ncol(DT.mean), with=F], 
-                  by=list(DT.mean$subject, DT.mean$activity), FUN = round_mean,  simplify = TRUE)
-colnames(DT.final) <- Features
 
-write.table(x = DT.final, file = "./clean_average_dataset.txt", row.names = F, col.names = T, 
+DT.tidy <- make_tidy_set(PATH, F)
+write.table(x = DT.tidy, file = "./clean_average_dataset.txt", row.names = F, col.names = T, 
             sep = " ", quote = F)
 

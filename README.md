@@ -13,7 +13,30 @@ From each each window, a vector of features was calculated from the time and fre
 ## Description of tidy set
 ---
 
-Original data was simplified and summarized in [tidy set]
+Original data was simplified and summarized in [tidy set]. __All measurements in tidy set are averages of each variable for each activity and each participant__ All measurements are normalized in range [-1, 1].
+### Description of each variable
++ subject (integer).  Identifies the participant number. Its range is from  1 to 30
++ activity (character). The activity the participant performed. 
+	1. WALKING
+	2. WALKING_UPSTAIRS
+	3. WALKING_DOWNSTAIRS
+	4. SITTING
+	5. STANDING
+	6. LAYING
++ tBodyAcc_mean_XYZ (numeric). Mean value of the body acceleration signal in X, Y, Z directions [$m/s^2$ ].
++ tBodyAcc_std_XYZ (numeric). Standard deviation of the body acceleration signal in X, Y, Z directions [$m/s^2$].
++ tGravityAcc_mean_XYZ (numeric). Mean value of the gravity acceleration signal in X, Y, Z directions [$m/s^2$].
++ tGravityAcc_std_XYZ (numeric). Standard deviation of the gravity acceleration signal in X, Y, Z directions [$m/s^3$].
++ tBodyAccJerk_mean_XYZ (numeric). Mean value of the Jerk acceleration signal in X, Y, Z directions [$m/s^3$].
++ tBodyAccJerk_std_XYZ (numeric). Standard deviation of the Jerk acceleration signal in X, Y, Z directions [$m/s^3$].
++ tBodyGyro_mean_XYZ (numeric). Mean value of the body gyroscope signal in X, Y, Z directions [$rad/s$].
++ tBodyGyro_std_XYZ (numeric). Standard deviation of the body gyroscope signal in X, Y, Z directions [$rad/s$].
++ tBodyGyroJerk_mean_XYZ (numeric). Mean value of the Jerk gyroscope signal in X, Y, Z directions [$rad/s^2$].
++ tBodyGyroJerk_std_XYZ (numeric). Standard deviation of the Jerk gyroscope signal in X, Y, Z directions [$rad/s^2$].
++ tBodyAccMag_mean (numeric). Magnitude mean value of body acceleration signal [$m/s^2$].
++ tBodyAccMag_std (numeric). Magnitude standard deviation of body acceleration signal [$m/s^2$].
++ tGravityAccMag_mean (numeric). Magnitude mean of gravity acceleration signal [$m/s^2$].
++ tGravityAccMag_std (numeric). Magnitude standard deviation of gravity acceleration signal [$m/s^2$].
 
 ## Reference
 <a name="ref1">
@@ -23,6 +46,6 @@ Original data was simplified and summarized in [tidy set]
 
 [Assignment Page]: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 [dataset page]:<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-[tidy set]:
+[tidy set]:(./clean_average_dataset.txt)
 
 
