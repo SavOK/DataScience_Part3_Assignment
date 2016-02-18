@@ -33,7 +33,7 @@ __IMPORTANT: All measurements in tidy set are averages of each variable for each
 	4. SITTING
 	5. STANDING
 	6. LAYING
-+ tBodyAcc_mean_XYZ (numeric). Mean value of the body acceleration signal in X, Y, Z directions [$$m/s^2$$ ].
++ tBodyAcc_mean_XYZ (numeric). Mean value of the body acceleration signal in X, Y, Z directions [$m/s^2$].
 + tBodyAcc_std_XYZ (numeric). Standard deviation of the body acceleration signal in X, Y, Z directions [$m/s^2$].
 + tGravityAcc_mean_XYZ (numeric). Mean value of the gravity acceleration signal in X, Y, Z directions [$m/s^2$].
 + tGravityAcc_std_XYZ (numeric). Standard deviation of the gravity acceleration signal in X, Y, Z directions [$m/s^3$].
@@ -81,8 +81,8 @@ For more detailed and meaningful explanation please refer to original [descripti
 </a>
 [Assignment Page]: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 [dataset page]:<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-[tidy set]:(./clean_average_dataset.txt)
-[R script]:(./run_analysis.R)
-[description]:(./features_info.txt)
+[tidy set]:./clean_average_dataset.txt
+[R script]:./run_analysis.R
+[description]:./features_info.txt
 
 
